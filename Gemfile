@@ -1,7 +1,7 @@
 source :rubygems
 
 gem "sinatra"
-gem "thin"
+gem "unicorn"
 
 group :development do
   gem "foreman"
