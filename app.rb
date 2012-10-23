@@ -8,7 +8,7 @@ end
 
 get %r{^/fizzbuzz/([\d]+),([\d]+)$} do |a, b|
   a, b = a.to_i, b.to_i
-  raise RangeError if a > b
+  raise RangeError if a > b || b > 100_000
 
   stream do |out|
     out << '"'
@@ -17,7 +17,6 @@ get %r{^/fizzbuzz/([\d]+),([\d]+)$} do |a, b|
     end
     out << '"'
   end
-  #(a..b).map { |i| i.fizzbuzz }.join("\n").concat("\n").to_json
 end
 
 not_found do
