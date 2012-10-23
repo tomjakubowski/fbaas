@@ -6,6 +6,10 @@ before do
   content_type :json, charset: 'utf-8'
 end
 
+get "/" do
+  redirect "https://github.com/tomjakubowski/fbaas/tree/sinatra"
+end
+
 get %r{^/fizzbuzz/([\d]+),([\d]+)$} do |a, b|
   a, b = a.to_i, b.to_i
   raise RangeError if a > b || b > 100_000
