@@ -18,7 +18,7 @@ all successful response bodies are in UTF-8 encoded JSON. all errors are
 ```` GET /fizzbuzz/a,b ````
 
 error if ````a > b```` or if either ````a```` or ````b```` is not a natural
-number.
+number. if ````b > 100000````, behavior is undefined.
 
 otherwise given the natural number interval ````[a,b]````, respond with a
 string constructed as follows:
