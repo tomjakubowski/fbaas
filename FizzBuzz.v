@@ -115,24 +115,16 @@ Hint Constructors Show.
 (* We can decide strings which satisfy the above conditions. *)
 Lemma Fizz_dec (n : Integer) : { s : String | Fizz n s }.
   remember (Divides_dec 3 n) as d3.
-  destruct d3.
-
-    exists fizz.
-    auto.
-
-    exists empty.
+  destruct d3;
+    eexists;
     auto.
 Qed.
 Extraction Inline Fizz_dec.
 
 Lemma Buzz_dec (n : Integer) : { s : String | Buzz n s }.
   remember (Divides_dec 5 n) as d5.
-  destruct d5.
-
-    exists buzz.
-    auto.
-
-    exists empty.
+  destruct d5;
+    eexists;
     auto.
 Qed.
 Extraction Inline Buzz_dec.
@@ -140,18 +132,8 @@ Extraction Inline Buzz_dec.
 Lemma Show_dec (n : Integer) : { s : String | Show n s }.
   remember (Divides_dec 3 n) as d3.
   remember (Divides_dec 5 n) as d5.
-  destruct d3; destruct d5.
-
-    exists empty.
-    auto.
-
-    exists empty.
-    auto.
-
-    exists empty.
-    auto.
-
-    exists (show n).
+  destruct d3, d5;
+    eexists;
     auto.
 Qed.
 Extraction Inline Show_dec.
