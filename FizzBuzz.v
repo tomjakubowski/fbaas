@@ -146,4 +146,4 @@ Definition fizzbuzz (n : Integer) : String :=
   append fizz (append buzz (append bare nl)).
 
 (* Finally, the code we want to extract. *)
-Extraction fizzbuzz.
+Recursive Extraction fizzbuzz.

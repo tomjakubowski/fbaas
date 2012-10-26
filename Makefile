@@ -3,8 +3,7 @@ fbaas: Main.hs FizzBuzz.hs
 
 %.hs: %.v
 	@echo "module $* where" > $@
-	@echo "import qualified Prelude" >> $@
-	coqtop -batch -l $< | tail -n +2 >> $@
+	coqtop -batch -l $< | tail -n +3 >> $@
 
 clean:
 	rm -f *.hi *.o
