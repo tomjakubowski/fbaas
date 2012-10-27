@@ -3,7 +3,7 @@ class Integer
   def fizzbuzz
     raise RangeError if self < 1
 
-    if (self % 3 == 0 && self % 5 == 0)
+    if (self % 15 == 0)
       "FizzBuzz"
     elsif (self % 3 == 0)
       "Fizz"
